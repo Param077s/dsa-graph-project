@@ -1,11 +1,3 @@
-// Graph Algorithms - DSA Major Project
-// Build a weighted graph and run several classic graph algorithms on it:
-//   BFS, DFS, Dijkstra (with path), Minimum Spanning Tree, cycle detection,
-//   and connected components. Uses colored output to make things readable.
-//
-// compile: g++ -std=c++17 -o graph GraphAlgorithms.cpp
-// run:     ./graph
-
 #include <iostream>
 #include <vector>
 #include <queue>
