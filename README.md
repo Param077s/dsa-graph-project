@@ -1,15 +1,19 @@
-# Graph Algorithms - DSA Major Project
+# Graph Algorithms Toolkit - DSA Major Project
 
-A menu driven C++ program to build a weighted graph and run three graph
-algorithms on it.
+A menu driven C++ program that builds a weighted graph and runs a whole set of
+classic graph algorithms on it, with colored terminal output.
 
-## Algorithms
-- **BFS** (Breadth First Search) - uses a queue, visits level by level
+## Features
+- **BFS** (Breadth First Search) - queue based, level by level
 - **DFS** (Depth First Search) - recursive
-- **Dijkstra** - shortest path from a source vertex using a min heap
+- **Dijkstra** - shortest path from a source, shows the cost *and* the actual route
+- **Minimum Spanning Tree** - Prim's algorithm with total weight
+- **Cycle detection** - works for both directed and undirected graphs
+- **Connected components** - finds how many separate pieces the graph has
+- **Load sample graph** - one key press to load a ready made example for demos
 
 The graph is stored as a weighted adjacency list. You can build any graph at
-runtime and pick directed or undirected at the start.
+runtime or just load the sample, and pick directed or undirected at the start.
 
 ## Compile and run
 ```
@@ -17,26 +21,30 @@ g++ -std=c++17 -o graph GraphAlgorithms.cpp
 ./graph
 ```
 
-## Example
-A small 5 vertex undirected graph:
+## Quick demo
+Start it, choose undirected, then pick **1** to load the sample graph and try
+the other options. On the sample graph you get:
 
-```
-edges: 0-1 (5), 0-2 (3), 1-2 (1), 1-3 (7), 2-4 (2)
-```
-
-Output:
-- BFS from 3  -> `3 1 0 2 4`
-- DFS from 4  -> `4 2 0 1 3`
-- Dijkstra from 0 -> `0->1 = 4`, `0->2 = 3`, `0->3 = 11`, `0->4 = 5`
+- BFS from 0  -> `0 1 2 3 4 5`
+- DFS from 0  -> `0 1 2 4 3 5`
+- Dijkstra from 0 -> `0->3` costs 7 by the path `0 -> 1 -> 2 -> 4 -> 3`
+- MST total weight = 9
+- Cycle check -> a cycle exists
+- Connected components -> 1 group
 
 ## Menu
 ```
-1. Add edge (from, to, weight)
-2. Show graph
-3. BFS
-4. DFS
-5. Dijkstra shortest path
+1. Load sample graph
+2. Add edge (from, to, weight)
+3. Show graph
+4. BFS traversal
+5. DFS traversal
+6. Dijkstra shortest path
+7. Minimum spanning tree
+8. Detect cycle
+9. Connected components
 0. Exit
 ```
 
-Vertices are numbered 0 to n-1. Dijkstra assumes non negative weights.
+Vertices are numbered 0 to n-1. Dijkstra and Prim's MST assume non negative
+weights. MST needs an undirected graph.
