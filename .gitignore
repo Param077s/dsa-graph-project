@@ -1,0 +1,5 @@
+# compiled binary
+graph
+*.o
+*.out
+.DS_Store
