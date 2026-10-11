@@ -20,10 +20,7 @@
     .btn:hover { border-color:var(--blue); color:var(--blue); background:#f7f9ff; }
     .btn:focus-visible { outline:3px solid rgba(36,87,214,.25); outline-offset:2px; }
     .btn.active { color:#fff; border-color:var(--blue); background:var(--blue); }
-    .btn.ghost { border-color:transparent; background:transparent; }
     .card { background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); }
-    .intro { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 16px; margin-bottom:18px; color:#2a3954; background:var(--blue-soft); border:1px solid #cbd9fb; border-radius:12px; }
-    .intro b { color:var(--blue); }
     .layout { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(310px,.9fr); gap:18px; }
     .graph-card { padding:17px; min-height:475px; }
     .panel-head { display:flex; align-items:center; justify-content:space-between; gap:10px; }
@@ -72,12 +69,7 @@
         <h1>Graph Algorithms — Interactive Demo</h1>
         <p class="subtitle">A simple way to explain your DSA project without showing code.</p>
       </div>
-      <button id="fullscreen" class="btn ghost" type="button">Fullscreen</button>
     </header>
-
-    <section class="intro" aria-label="How to use this demo">
-      <span><b>How to present:</b> Click one algorithm, point to the highlighted graph, then read “Best when” aloud.</span>
-    </section>
 
     <section class="layout" aria-label="Graph visualizer and explanation">
       <section class="card graph-card" aria-labelledby="graphTitle">
@@ -221,7 +213,6 @@
         render(item);
       }
       document.getElementById('buttons').addEventListener('click',event => { const button = event.target.closest('[data-algorithm]'); if (button) show(button.dataset.algorithm); });
-      document.getElementById('fullscreen').addEventListener('click',async () => { try { if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); } catch {} });
       show('bfs');
     })();
   </script>
