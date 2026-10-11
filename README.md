@@ -23,7 +23,7 @@ g++ -std=c++17 -o graph GraphAlgorithms.cpp
 
 ## Interactive browser demo
 For a presentation-friendly explanation without terminal input, open the
-[interactive Graph Algorithms demo](https://param077s.github.io/dsa-graph-project/).
+[▶ Live interactive Graph Algorithms demo](https://htmlpreview.github.io/?https://github.com/Param077s/dsa-graph-project/blob/main/graph-algorithms-visualizer.html).
 It uses the same sample graph and explains what each algorithm does, when to
 use it, and how it compares with the other algorithms.
 
